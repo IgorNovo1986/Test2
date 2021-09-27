@@ -1,5 +1,8 @@
+import apiService from "@/services/api/api.service.js";
 import Vue from 'vue'
 import App from './App.vue'
+
+apiService.init()
 
 Vue.config.productionTip = false
 

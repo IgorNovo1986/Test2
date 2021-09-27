@@ -35,6 +35,8 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  async created() {
   }
 }
 </script>
