@@ -11,13 +11,13 @@ class ApiService {
 
   get(url) {
     console.log('test get', url)
-    return new Promise((resolve) => {
+    return new Promise((resolve,reject) => {
       axios
         .get(`${url}`)
         .then((response) => {
           resolve(response);
         })
-        .catch();
+        .catch(reject);
     });
   }
 }
