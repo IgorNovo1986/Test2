@@ -1,13 +1,7 @@
 <template>
   <div>
-    <img :src="imgUrl" alt="">
     <ul>
-      <li
-          v-for="(ingredient, index) in ingredients"
-          :key="index"
-      > {{index + 1}}
-        <span style="margin-left: 20px">{{ingredient.id}}</span>
-        {{ingredient.text}} -- {{ingredient.rank}}</li>
+      <li v-for="(character, index) in characters" :key="index">{{character}}</li>
     </ul>
   </div>
 </template>
@@ -23,15 +17,13 @@ export default {
   },
   data () {
     return {
-      imgUrl: null,
-      ingredients: []
+      characters: []
     }
   },
   async created () {
-      let data = await apiService.get('/product/737628064502.json')
-      this.imgUrl = data.data.product.image_nutrition_small_url
-      console.log(data.data.product)
-      this.ingredients = data.data.product.ingredients
+      let data = await apiService.get('characters')
+      console.log('Что у нас здесь',data)
+      this.characters = data;
     }
 }
 </script>
