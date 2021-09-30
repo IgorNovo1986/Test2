@@ -12,7 +12,7 @@
             </div>
             <input type="submit" v-on:click.prevent="visible=!visible">
       </form>
-      <div v-if="!visible">
+      <div v-else>
         <h1>Приветствие</h1>
         <!-- <p>Phone: {{userDatas[0].value}}</p>
         <p>First name:{{userDatas[1].value}}</p>
